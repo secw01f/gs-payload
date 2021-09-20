@@ -30,7 +30,7 @@ def usage():
   print('-l   list       List all listeners in the database')
   print('-a   add        Add key of active listener to listener database (Key flag required)')
   print('-d   delete     Delete a key from listener database (Key flag required)')
-  print('-u   url     Url hosting gsocket deployment script (Default gsocket.io/x)')
+  print('-u   url        Url hosting gsocket deployment script (Default gsocket.io/x)')
   print('')
   print('Example:')
   print('python gs-payload.py')
