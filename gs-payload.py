@@ -79,8 +79,8 @@ def main():
         elif o in ('-u', '--url'):
             Url = a
 
-    if os.path.exists('~/.gs-payload/listeners.db') == False:
-        os.mkdir('~/.gs-payload')
+    if os.path.exists((os.path.expanduser('~') + '/.gs-payload/listeners.db')) == False:
+        os.mkdir((os.path.expanduser('~') + '/.gs-payload'))
         db.db_create()
     else:
         pass
