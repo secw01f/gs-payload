@@ -4,7 +4,7 @@ import sys
 
 def db_create():
     try:
-        conn = sqlite3.connect(r'/usr/local/gs-payload/listeners.db')
+        conn = sqlite3.connect(r'/opt/gs-payload/listeners.db')
         cur = conn.cursor()
         cur.execute('CREATE TABLE listeners (key_id varchar(25) PRIMARY KEY, created varchar(40), connection_succesful varchar(7), last_connected varchar(40));')
         conn.commit()
@@ -16,7 +16,7 @@ def db_create():
 
 def db_list():
     try:
-        conn = sqlite3.connect(r'/usr/local/gs-payload/listeners.db')
+        conn = sqlite3.connect(r'/opt/gs-payload/listeners.db')
         cur = conn.cursor()
         cur.execute('SELECT * FROM listeners;')
         results = cur.fetchall()
@@ -30,7 +30,7 @@ def db_list():
 
 def db_add(key, date, connection_status, last_connected):
     try:
-        conn = sqlite3.connect(r'/usr/local/gs-payload/listeners.db')
+        conn = sqlite3.connect(r'/opt/gs-payload/listeners.db')
         cur = conn.cursor()
         cur.execute('INSERT INTO listeners(key_id, created, connection_succesful, last_connected) VALUES(?,?,?,?);', (key, date, connection_status, last_connected))
         conn.commit()
@@ -42,7 +42,7 @@ def db_add(key, date, connection_status, last_connected):
 
 def db_update(key, connection_status, last_connected):
     try:
-        conn = sqlite3.connect(r'/usr/local/gs-payload/listeners.db')
+        conn = sqlite3.connect(r'/opt/gs-payload/listeners.db')
         cur = conn.cursor()
         cur.execute('UPDATE listeners SET connection_succesful=?, last_connected=? WHERE key_id=?;', (connection_status, last_connected, key))
         conn.commit()
@@ -54,7 +54,7 @@ def db_update(key, connection_status, last_connected):
 
 def db_delete(key):
     try:
-        conn = sqlite3.connect(r'/usr/local/gs-payload/listeners.db')
+        conn = sqlite3.connect(r'/opt/gs-payload/listeners.db')
         cur = conn.cursor()
         cur.execute('DELETE FROM listeners WHERE key_id=?;', (key,))
         conn.commit()
