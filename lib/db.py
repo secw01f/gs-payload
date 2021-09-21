@@ -21,8 +21,8 @@ def db_list():
         cur = conn.cursor()
         cur.execute('SELECT * FROM listeners;')
         results = cur.fetchall()
-        for row in results:
-            print('|  Key  |  Created Date  |  Connection Successful  |  Last Connected  |') 
+        print('|  Key  |  Created Date  |  Connection Successful  |  Last Connected  |\n')
+        for row in results: 
             print('|  ' + row[0] + '  |  ' + row[1] + '  |  ' + row[2] + '  |  ' + row[3] + '  |')
         cur.close()
         conn.close()
