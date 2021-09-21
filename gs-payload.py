@@ -127,6 +127,7 @@ def main():
                 db.db_add(Key, datetime.datetime.now(), 'UNKNOWN', 'UNKNOWN')
                 sys.exit()
             else:
+                db.db_add(Key, datetime.datetime.now(), 'UNKNOWN', 'UNKNOWN')
                 print('[ + ] Waiting for connection from %s' % (Key))
                 connect.gs_reverse_connect(Key)
         else:
@@ -135,6 +136,7 @@ def main():
                 db.db_add(Key, datetime.datetime.now(), 'UNKNOWN', 'UNKNOWN')
                 sys.exit()
             else:
+                db.db_add(Key, datetime.datetime.now(), 'UNKNOWN', 'UNKNOWN')
                 print('[ + ] Waiting for connection from %s' % (Key))
                 connect.gs_reverse_connect(Key)
     else:
